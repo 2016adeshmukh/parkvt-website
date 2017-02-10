@@ -51,6 +51,7 @@ var login = require('./routes/login');
 var register = require('./routes/register');
 var dashboard = require('./routes/dashboard');
 var map = require('./routes/map');
+var api = require('./routes/api');
 
 app.use('/', index);
 app.use('/users', users);
@@ -58,6 +59,7 @@ app.use('/login', login);
 app.use('/register', register);
 app.use('/dashboard', dashboard);
 app.use('/map', map);
+app.use('/api', api);
 
 app.get('/logout', function(req, res, next){
   req.logout();
