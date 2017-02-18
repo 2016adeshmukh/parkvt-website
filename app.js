@@ -26,7 +26,7 @@ app.set('view engine', 'ejs');
 var passport = require('passport'),
     LocalStrategy = require('passport-local'),
     User = require('./models/User');
-    
+
 app.use(require('express-session')({
   secret: "some sort of secret",
   resave: false,
@@ -51,7 +51,7 @@ var login = require('./routes/login');
 var register = require('./routes/register');
 var dashboard = require('./routes/dashboard');
 var map = require('./routes/map');
-var api = require('./routes/api');
+var mobile = require('./routes/mobile');
 
 app.use('/', index);
 app.use('/users', users);
@@ -59,7 +59,7 @@ app.use('/login', login);
 app.use('/register', register);
 app.use('/dashboard', dashboard);
 app.use('/map', map);
-app.use('/api', api);
+app.use('/mobile', mobile);
 
 app.get('/logout', function(req, res, next){
   req.logout();
