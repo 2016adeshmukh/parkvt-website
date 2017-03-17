@@ -52,6 +52,7 @@ var register = require('./routes/register');
 var dashboard = require('./routes/dashboard');
 var map = require('./routes/map');
 var mobile = require('./routes/mobile');
+var time = require('./routes/time');
 
 app.use('/', index);
 app.use('/users', users);
@@ -60,6 +61,7 @@ app.use('/register', register);
 app.use('/dashboard', dashboard);
 app.use('/map', map);
 app.use('/mobile', mobile);
+app.use('/time', time);
 
 app.get('/logout', function(req, res, next){
   req.logout();
