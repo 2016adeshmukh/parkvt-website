@@ -2,11 +2,12 @@ var express = require('express'),
   router = express.Router();
 
 router.get('/', function(req, res, next) {
-  var time = new Date();
+  var current = new Date();
+  var time = current.getHours()%12+':'+current.getMinutes();
 
   // res.send(ejs.render('../views/map'));
 
-  res.json({ti: time}).status(200);
+  res.json({time: current}).status(200);
 });
 
 module.exports = router;
