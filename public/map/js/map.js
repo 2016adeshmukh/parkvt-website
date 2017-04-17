@@ -16,7 +16,7 @@ require(["https://openlayers.org/en/v3.20.1/build/ol.js", "dojo/domReady!"],
        layers: layers,
        target: 'map',
        view: new ol.View({
-         center: ol.proj.transform([-80.411235, 37.2133937], 'EPSG:4326','EPSG:3857'),
+         center: ol.proj.transform([-80.422078, 37.227749], 'EPSG:4326','EPSG:3857'),
          zoom: 15
        })
      });
