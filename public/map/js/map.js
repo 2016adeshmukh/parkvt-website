@@ -7,8 +7,15 @@ require(["https://openlayers.org/en/v3.20.1/build/ol.js", "dojo/domReady!"],
        new ol.layer.Tile({
          source: new ol.source.TileWMS({
            url: 'http://geo.hokiepark.com:80/geoserver/Parking/wms',
-           params: {'LAYERS': 'Parking:SpaceScrub', 'TILED': true},
+           params: {'LAYERS': 'Parking:SpaceScrub', 'TILED': true, 'STYLES': 'Parking:RedSpaces'},
            serverType: 'geoserver'
+         })
+       }),
+       new ol.layer.Tile({
+         source: new ol.source.TileWMS({
+           url: 'http://geo.hokiepark.com:80/geoserver/Parking/wms',
+           params: {'LAYERS': 'Parking:SpaceScrub', 'TILED': true, 'STYLES': 'Parking:GreenSpaces', 'CQL_FILTER': "type='F/S'"},
+           serverType:'geoserver'
          })
        })
      ];
@@ -21,3 +28,4 @@ require(["https://openlayers.org/en/v3.20.1/build/ol.js", "dojo/domReady!"],
        })
      });
 });
+~
